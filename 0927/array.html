@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>array</title>
+		<script>
+		/*
+			지역변수:
+			함수안에서만 사용 가능
+			함수 안에서 선언된 변수
+			다른 함수에서도 똑같은 이름으로 사용 가능.
+			함수가 종요되면 자동적으로 소멸한다.
+			
+			전역변수:
+			함수외부에서 선언된 변수
+			웹 페이지상의 모든 스크립트와 모든 함수는 전역 변수를 사용할 수 있다.
+			전역 변수는 사용자가 웹페이지를 닫으면 소멸된다.
+		
+			
+			이름이 같은 전역변수와 지역변수가 있을 시 우선순위는 지역변수로 감. 
+			
+		*/	
+		
+		
+		
+		/* 
+		함수 하나를 생성한 후(함수명:call)
+		함수밖에서 prompt로 자기이름, 나이를 입력받아
+		배열안에 넣고, 버튼을 누르면 출력하세요.
+		*/
+		
+		/* 
+			var info = new Array();//전역변수
+		
+		info[0] = prompt('이름을 입력하세요')
+		info[1] = prompt('나이를 입력하세요')
+			
+		function call(name,age){
+			
+			
+			document.write(info);
+		} */
+		
+		
+			/* function fun(name,age){
+			//()괄호 안은 변수로
+				//배열에 넣을 것.
+				
+				var arr = new Array();
+				arr[0]=name;//문자열
+				arr[1]="";
+				arr[2]=age;//숫자형
+				
+				
+				document.write(arr);
+				
+			}//function으로 둘러싸면 출력 불가.fuction 상자처럼 생각.
+			//따로 불러와야 출력됨
+		 */	
+			
+		 
+		 
+		 /*덧셈, 뺄셈, 곱셈, 나눗셈 함수를 각각 만들고
+		 버튼 호출을 각각하여 계산하세요.*/
+		 
+		 var x=0; y=0;
+		 
+		 	/* function add(){
+				x= document.getElementById("txtA").value;
+				y= document.getElementById("txtB").value;
+		 		document.write(parseInt(x)+parseInt(y));
+		 		
+			}
+			
+		 	function minus(){
+				x= document.getElementById("txtA").value;
+				y= document.getElementById("txtB").value;
+		 		document.write(parseInt(x)-parseInt(y));
+				
+			}
+		 	
+		 	function multiple(){
+				x= document.getElementById("txtA").value;
+				y= document.getElementById("txtB").value;
+		 		document.write(x*y);
+				
+			}
+		 	
+		 	function divide(){
+				x= document.getElementById("txtA").value;
+				y= document.getElementById("txtB").value;
+		 		document.write(x/y);
+				 
+			}*/
+		 
+		 function cal(str){
+			x= document.getElementById("txtA").value;
+			y= document.getElementById("txtB").value;
+		 	document.write();
+			if(str == "add"){
+				document.write(parseInt(x)+parseInt(y));
+				
+			}else if(str == "minus"){
+				document.write(parseInt(x)-parseInt(y));
+				
+			}else if(str == 'multiple'){
+				document.write(parseInt(x)*parseInt(y));
+				
+			}else if(str == 'divide'){
+				document.write(x/y);
+		 		}
+		 
+			}
+			
+		</script>
+		
+	</head>
+	
+	<body>
+	
+	
+	<!--  
+		<button value="눌러라" onclick="fun('신유진',36);">눌러라!!!</button>
+		<!-- //""안에 들어간게 자바
+		<button value="입력" onclick="call(one+two);">입력!!</button>-->
+		
+		
+		<input type="text" id="txtA" size="20"><br>
+		<input type="text" id="txtB" size="20"><br>
+		
+		<!-- 
+		<button value="" onclick="add();">덧셈 버튼</button>		
+		<button value="" onclick="minus();">뺄셈 버튼</button>		
+		<button value="" onclick="multiple();">곱셈 버튼</button>		
+		<button value="" onclick="divide();">나눗셈 버튼</button>		
+		 -->
+		<div></div>
+		<button value="" onclick="cal('add');">덧셈버튼</button>		
+		<button value="" onclick="cal('minus');">뺄셈 버튼</button>		
+		<button value="" onclick="cal('multiple');">곱셈 버튼</button>		
+		<button value="" onclick="cal('divide');">나눗셈 버튼</button>		
+	</body>
+</html>

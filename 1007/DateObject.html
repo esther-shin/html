@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>DateObeject</title>
+		<style>
+		
+		table,tr,td{
+			border:1px solid black;}
+		
+		</style>
+		
+		<script>
+		
+		//배열 수 25개 생성,, 숫자반복되면 안됨
+		//출력 형태를 5*5로 출력하세요
+		//Math.floor
+		
+		var arr= new Array();
+		//var result= Math.floor(Math.random()*25)+1;
+		
+		function basic(){
+		
+		
+		for(var i = 0;i<25;i++){
+			arr[i] = Math.floor(Math.random()*25)+1;
+			for(var j = 0; j<i ;j++){
+				if(arr[i] == arr[j]){
+					i--;
+					
+					}	
+				}
+			}
+			return arr;
+		}
+			document.write(basic());
+			basic();
+//======================================================			
+			
+			
+		function changeGreen(id){
+			var element= document.getElementById(id);
+			element.style.backgroundColor="green";
+			/* element.style.color="yellow" */
+			
+			totalbingo();
+		}
+		
+//=====================================================
+		document.write("<table>");
+		
+		for(var i=1;i<=25;i++){
+		
+			if(i%5==1){
+				document.write("<tr>");
+			}
+			document.write("<td id="+ i +" onclick='changeGreen(this.id)'>");
+			//테이블 하나하나마다 아이디를 넣어준거.
+			document.write(arr[i-1]);
+			document.write("</td>");
+			
+			if(i%5==0){
+				document.write("</tr>");
+			}
+		
+		}
+		document.write("</table>");
+		
+//=====================================================
+	
+	function totalbingo(){
+	
+	
+	var bingo= new Array([1,2,3,4,5,],[6,7,8,9,10],
+			[11,12,13,14,15],[16,17,18,19,20],
+			[21,22,23,24,25],[1,6,11,16,21],[2,7,12,17,22],
+			[3,8,13,18,23],[4,9,14,19,24],[5,10,15,20,25]
+			,[1,7,13,19,25],[5,9,13,17,21]);
+	var bingocount=0;
+	var tmp= 0;
+	for(var i =0;i<bingo.length;i++){
+		tmp=i;
+		cnt=0;
+		for(var j=0;j<bingo[i].length;j++){
+			if(document.getElementById(bingo[i][j]).style.backgroundColor == "green"){
+				if(tmp==i){cnt++;}
+				if(cnt == 5){bingocount++;}
+			}
+		}
+	}
+	document.getElementById("b").innerHTML=bingocount;
+}
+	
+		
+		</script>
+	
+	
+	</head>
+	<body>
+		<p id="b">빙고:</p>
+	</body>
+</html>

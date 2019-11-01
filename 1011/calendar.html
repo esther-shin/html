@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			table{
+				border:1px solid black;
+			}
+			td{
+				border:1px solid black;
+				width:100px;
+				text-align:center;
+			}
+		</style>
+		<script>
+		function calendar(year, month){
+		var today = new Date();
+		
+		today.setFullYear(year);
+		today.setMonth(month);
+	
+		
+		var strT = "";
+		var arrDate = ["일","월","화","수","목","금","토"];
+		
+		
+		strT += "<table>";
+		
+		
+		
+		strT += "	<tr>";
+		strT += "		<td onclick='calendar("+year+", "+month-1+")'>&lt;";
+		strT += "		</td>";
+		
+		
+		strT += "		<td colspan='5'>";
+		strT += today.getFullYear() +"년 "+ parseInt(today.getMonth()+1) +"월";	
+		strT += "		</td>";
+	
+		strT += "		<td onclick='calendar("+year+", "+(month+1)+")'>&gt;";
+		strT += "		</td>";
+		strT += "	</tr>";
+		
+		
+		strT += "	<tr>";
+			for(x in arrDate){
+				strT += "		<td>"+arrDate[x]+"</td>";				
+			}
+		strT += "	</tr>";
+		
+		
+		/*날짜 계산을 하기위한 부분*/
+		today.setDate(1);
+		var startDay = today.getDay(); //요일
+		//console.log(startDay);
+		
+		today.setMonth(parseInt(today.getMonth()+1));
+		today.setDate(0);
+		var endDay = today.getDate(); //마지막 날짜
+		var day = 1, n =0;
+		
+		for(var i=1; i<=endDay+n; i++){
+			if(i%7 ==1){//1,8,15...
+				strT += "	<tr>";
+			} 			
+			if(i>startDay){
+				strT += "		<td>"+ (day++) +"</td>";
+				//strT += "		<td>"+ i +"</td>";
+			}else{
+				strT += "<td></td>";
+				n++;				
+			}			
+			 if(i%7 ==0){
+				strT += "	</tr>";
+			} 
+		}
+		
+		
+		
+		strT += "</table>";
+		
+		document.getElementById("result").innerHTML = strT;
+		}
+		
+		
+		window.onload = function(){
+			var today = new Date();
+			calendar(today.getFullYear(), today.getMonth());
+		}
+		</script>
+	</head>
+	<body>
+		<div id="result"></div>
+	</body>
+</html>
+
+
+
+
+

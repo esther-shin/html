@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>html and javascript</title>
+	<style>
+		#test{
+			color:blue;
+		}
+	
+	</style>
+	
+	<script>
+	/* 
+		var age = prompt("나이를 입력하세요.","만 나이로 입력합니다.");
+		
+		document.write(age+"세 입니다."); */
+		/* 
+		var x,y;
+		x = prompt("정수를 입력하세요");//"10"*1 ->10(숫자형으로 바뀜)
+		y = prompt("정수를 입력하세요");//"20"*1 ->20(숫자형으로 바뀜)
+		
+		document.write("두개의 합: "+(x*1+y*1) );
+		//document.write("두개의 합: "+(parseInt(x) + parseInt(y)));
+		 */
+		function func(){
+			/* alert("클릭했네요!");
+			
+			var str = prompt("값을 입력하세요");
+			document.write(str); */
+			  
+			document.body.style.backgroundColor="pink";  
+			var e = document.getElementById("test").style.backgroundColor="purple";
+			//e.style.color = "green";
+			
+		
+			if(e.style.color == "green"){
+				e.style.color = "red";
+				
+				
+			}else{
+				e.style.color = "green";
+			}	
+			
+				
+			
+		} 
+		 //함수에다 넣을 시 html이 없어지고 위에 덧붙여짐. 그래서 클릭하세요 버튼이 사라짐. 
+		
+		
+	</script>
+	
+	</head>
+	<body>
+		<h1 id="test">This is a heading</h1>
+		<button type="button" onclick="func();">클릭하세요.</button>
+	</body>
+</html>

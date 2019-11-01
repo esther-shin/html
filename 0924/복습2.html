@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>복습2</title>
+	<style>
+		#test{
+			color:blue;
+		}
+	
+	</style>
+	<script>
+	/*	var age=prompt("나이를 입력하세요","만 나이로 입력하세요");
+		document.write(age + "세 입니다.");
+	 */
+	 
+	 	/* var x,y;
+		x=prompt("정수를 입력하세요");
+		y=prompt("정수를 입력하세요");
+	 	
+		document.write("두개의 합:" + (x*1+y*1));
+	 	document.write("두개의 합:" + (parseInt(x)+parseInt(y)))
+	 	 */
+	 	 
+	 	 
+	 	 function func(){
+	 		
+	 		/* //alert("클립했네요!");
+	 		var str =prompt("값을 입력하세요");
+	 		document.write(str); */
+	 		
+	 		document.body.style.backgroundColor="green";
+	 		var e = document.getElementById("test").style.backgroundColor="orange";
+	 		
+	 		
+	 		if(e.style.color == "green"){
+	 			e.style.color =="red";
+	 			}else{
+	 				e.style.color = "green"}
+	 			}
+	 	
+	</script>
+		
+	</head>
+	
+	<body>
+		<h1 id="test">This is a heading</h1>
+		<button type="button" onclick="func();">클릭</button>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+		function srcChange(){
+					imgarr= ["컴퓨터.jpg","식품.jpg","구름.jpg","호랑이.jpg","커피.jpg"];
+					
+					idx = Math.floor(Math.random()*imgarr.length);
+					//0~4중 랜덤 수
+					document.getElementById("img1").firstChild.src = "../imgs/"+imgarr[idx];
+					document.getElementById("img1").firstChild.width = 100;
+				}
+		
+		function changeColor(){
+			id= setInterval(srcChange,1000);//flash함수를 1초마다 호출
+		}
+		
+	</script>
+	</head>
+	<body>
+			<button onclick="srcChange();">변경</button>
+	</body>
+</html>

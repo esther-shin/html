@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Date복습</title>
+	<script>
+	
+	var dia = new Date();
+	
+	function proc1(){
+	var dia1 = new Date(1000000000000);
+	var dia2 = new Date("2019.10.08");
+	var dia3 = new Date(2019,1,1);
+	
+	console.log(dia3);
+	}
+	
+	
+	function proc2(){
+		
+		result = dia + "<br>";
+		result += dia.toDateString() +"<br>";
+		document.getElementById("res").innerHTML = result;
+	}
+	 
+	
+	function proc3(){
+		var day = dia.getDay();
+		//요일을 숫자값으로 가져옴
+		console.log(day);
+		var days=["일요일","월요일","화요일","수요일","목요일","금요일"]
+		console.log(days[day]);//0이 일요일
+	}
+	
+	function proc4(){
+		console.log("오늘 날짜:" + dia.getDate());//오늘 일 자
+		console.log("오늘 월(+1)이번달이 10월이면 9월 값을 가져온다:" + dia.getMonth());
+		console.log("오늘의 경과시간(밀리세컨드 단위), 기준은 1970년 1월1일"+dia.getTime());
+	
+	}
+	
+	
+	function proc5(){
+		//Date괄호안은 무조건 밀리세컨드 기준
+		y = new Date(dia.getTime()+(100*24*60*60*1000));
+		console.log(y);
+		
+	}
+	window.onload =function(){
+		proc5();
+	} 
+	
+	function proc7(){
+		
+		var selDate = document.getElementById("pdate").value;
+		selDate = new Date(selDate);
+		console.log(selDate);
+		
+		
+		/*오늘을 기준으로 환불일이 7일이내의 것만 가능하다
+		구입한 날을 설렉트하여 환불이 가능한지 아닌지 확인하세요
+		날짜 ~2019년 10월2일부터 10월 8일까지는 "환불이 가능합니다."
+		이외의 날짜는 "환불이 불가능합니다"
+		오늘 이후의 날짜를 설렉하면"다시 선택해주세요"
+		텍스트는 innerHTML로 넣어주기*/
+		
+		var today= new Date();
+		var refundDate = today -7 *3600*24*1000;
+	}
+	
+	
+	</script>
+	
+	
+</head>
+<body>
+	<div id="res"></div>
+	<input type="date" id="pdate">
+	<button type="button" onclick="proc7();">환불</button>
+	<p id="mention"></p>
+</body>
+</html>

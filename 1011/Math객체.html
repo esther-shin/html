@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Math객체</title>
+	<script>
+		/* var random = Math.floor(Math.random()*10 + 1) */
+	/* 
+	Math.random()*10 : 0~9
+	Math.random()*10 +1 : 1~10
+	Math.random()*20 + 11 :11~30//끈나는 시점 두개 더해서 하나빼기
+	
+	Math.floor(): 소수점 버림, 정수 반환
+	Math.ceil() : 소수점 올림, 정수 반환
+	Math.round(): 소수점 반올림, 정수 반환
+	*/
+	
+	/* var random =Math.floor(Math.random()*10);
+	
+	document.write(random); */
+	
+	/* 문제1) 1~10까지의 랜덤수를 발생 후 프롬프트를 사용하여 
+	사용자가 맞추는 프로그램을 작성하세요
+	
+	alert("틀렸습니다.")
+	prompt 다시띄어주기
+	
+	alert("x번만에 맞추셨습니다.")
+	prompt띄우지 않기*/
+	
+/* 	
+	var n=0;
+	var num = Math.floor(Math.random()*10+1)
+	console.log(num);
+	random = prompt('1부터 10까지 중 숫자를 입력하여 맞추세요');
+
+		
+		while(true){
+			if(random == num){
+				
+				alert(n + ' 번 만에 맞추셨습니다.');	
+				break;	
+			}else{
+					
+					random = prompt('틀렸습니다.다시 입력해주세요');
+					n++;
+					
+			}
+		} */
+	
+		/* 2번) 가위 바위 보 게임을 할 수 있는 프로그램을 작성하세요
+		//컴퓨터는 랜덤, 사용자는  prompt 로 입력 받아서
+		출력은 컴퓨터가 가위로 이겼습니다.
+		사용자가 바위로 이겼습니다.*/
+		
+		
+	/* 	
+		comp = Math.floor(Math.random()*3)
+		console.log("comp:"+ comp);
+		user = prompt('가위(0) 바위(1) 보(2) 중 하나를 입력합니다.')
+		console.log("user:" + user);
+		
+		if(comp-user==0){
+			alert("사용자와 컴퓨터가"+""+user+"로 비겼습니다." )
+		}else if(comp-user>0){alert("컴퓨터가"+""+comp+ "로 이겼습니다.")
+			}else{alert("사용자가" +""+ user + "로 이겼습니다.")}
+		
+	 */
+		
+		//3번 로또 번호 생성하는 프로그램을 작성하세요
+		//(1번~45번중 6개의 번호를 추첨)*5번
+	/* 	
+		3  6 7  29  4 19 
+		6  1 17 39 14 29
+		13 6 3  9 44  9
+		13 2 7 29  4 29
+		3  6 2 25  3 39 */
+	
+		
+		var arr= new Array();
+	 	var strhtml="";
+	 	for(var i=0;i<5;i++){
+		 	for(var k=0;k<6;k++){
+		 		arr[k]=Math.floor(Math.random()*45)+1;
+			 	}for(var j=0;j<i;j++){
+			 		if(arr[i] == arr[j]){
+			 			i--;
+			 			continue;
+		 		}
+		 	}
+	 	}
+		 	document.write(arr+"<br>");
+		 	
+		 
+		 	
+			 
+		
+		/* for(var i=1;i<5;i++){
+			arr[i]= Math.floor(Math.random()*45)+1;
+			for(var j=1;j<6; j++){
+			arr[i][j]= Math.floor(Math.random()*45)+1;
+			}
+		}
+		
+		for(var k=1;k<j;k++){
+			if(arr[i][k]==arr[i][j]){
+				j--;
+				break;
+			}
+		}		
+		document.write(arr);
+	 	 */
+		
+		
+	 	//----------------------
+		
+		
+		
+	/* 	for(var i =1;i<31;i++){
+		
+			document.write(arr[i]+",");
+			if(i%6==0){
+				document.write("<br>")
+			}
+		}		
+	  */
+		
+		/* 문제 4-1
+		주민번호를 입력받아 생년월일과 성별을 출력하는 프로그램을 작성하세요
+		(입력은 prompt로 받는다)
+	
+		
+		예시)주민 번호를 110326-4432618로 입력 받은 경우
+		(1,2는 1900년대생 3,4는 2000년 대생)
+		출력에서 
+			생일: 2011년 3월 26일
+			성별: 여자
+		
+		*/
+		
+	/*  function res(){
+			var res=prompt('주민번호를 입력하세요');
+			
+			if(res.charAt(7)==1 ||res.charAt(7)==2){
+					document.write("1990년대생 입니다.")
+					document.write("생일: 19"+res.substring(0,2)+"년"+res.substring(2,4)+"월"+res.substring(4,6)+"일"+"<br>");
+					
+				if(res.charAt(7)==1){
+					document.write("남자입니다.")
+				}else{
+					document.write("여자입니다.")
+					}
+				}
+			
+			
+			if(res.charAt(7)==3 ||res.charAt(7)==4){
+					document.write("2000년대 생 입니다.")
+					document.write("생일: 20"+res.substring(0,2)+"년"+res.substring(2,4)+"월"+res.substring(4,6)+"일"+"<br>");
+					if(res.charAt(7)==3){
+						document.write("남자입니다.")
+					}else{
+						document.write("여자입니다.")
+						}	
+			
+				}	
+				
+			}
+		
+		
+		window.onload=function(){
+			res();
+		}
+		   */
+		
+		/*문제 4-2)
+		주민번호를 입력받아 주민번호의 유효성을 검사하는 프로그램을 작성하세요
+		입력은 반드시(prompt로 받는다.)
+		->반드시 함수를 사용하기 (return 구문 사용)
+		
+		
+		주민번호: ABCDEF-GHIJKL M
+		1.A*2+B*3+...+H*9+I*2+..+L*5의 총합을 구한다.
+		2. 1 번의 합을 11로 나눈 나머지를 구한다.
+		3. 11에서2번을 뺀다.
+		4. 3번의 결과가 0~9이면 값 그대로, 10이면 0, 11 이면 1 로 변환.
+		5. 4번의 결과와 M자리의 값이 같으면 맞는 번호이다.
+		*/
+		
+	/* 
+		function res(){
+			var res=prompt('주민번호를 입력하세요');
+			var result=0;
+			var j=2;
+			var k=2;
+			var second=0;
+			var num = 0;
+			var last=0;
+			var third=0;
+			
+			for(var i=0;i<12;i++){
+				 if(i<8){
+					a = res.charAt(i);
+					result += a*j++;
+				} else{
+					b= res.charAt(i);
+					result += b*k++; 
+				} 
+			}
+			
+			second = (result%11);
+			
+			third = 11-second;
+
+			if(third<=10){
+				num = second%10;
+				last=11-num;
+				} else{
+				last = third;
+				}
+			return last;	 
+			
+		 
+			}
+		
+		
+		window.onload=function(){
+			document.write(res());
+		}
+		  
+		 
+		 */
+		
+		
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

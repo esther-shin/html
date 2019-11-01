@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>drag and drop</title>
+		<style>
+		
+			img{
+				width:200px;
+				height:200px;
+				border-radius: 200px;
+				margin-right:5px;}
+				
+			.box div{
+				min-hight:150px;
+				border:2px dashed orange;
+				height: 100px;
+				padding: 15px;
+				
+			}
+			
+			.box{
+				border:0 none;
+				background:pink;
+				height: auto;}
+			
+		</style>
+		
+		
+		<script>
+			function dragOver(event){
+				event.preventDefault();
+			}
+		
+			function dragStrat(event){
+				event.dataTransfer.setData("target_img",event.target.id);
+				event.preventDefault();//고유의 이벤트 내용을 실행하지 않도록 하기위한 메서드	
+			}
+			function dropEvent(event){
+				imgid = event.dataTransfer.getDate("target_img");
+				
+				if(event.target.tagName == "IMG"){
+					event.target.parentNode.appendChild(document.getElementById(imgid))
+				}else{
+					event.target.appenChild(document.getElementById(imgid));
+				}
+			}
+		
+		</script>
+		
+		
+	</head>
+	<body ondrop="dropEvent(event)" ondragover="dragOver(event)">
+		<h1>drag and drop</h1>
+		<div class="box" ondrop="dropEvent(event)"ondragover="dragOver(event)">
+		<h2>원하는 물건(사진)을 끌어서 옮겨주세요</h2>
+		<div id ="result" ondrop="dropEvent(event)" ondragover="dragOver(event)"></div>
+		
+		<img src="../imgs/가구.jpg" draggable="true" ondragstart="dragStart(event)">
+		<img src="../imgs/옷.jpg" draggable="true" ondragstart="dragStart(event)">
+		<img src="../imgs/식품.jpg" draggable="true" ondragstart="dragStart(event)">
+		<img src="../imgs/옷2.jpg" draggable="true" ondragstart="dragStart(event)">
+		</div>
+	</body>
+</html>

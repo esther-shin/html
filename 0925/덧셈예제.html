@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>덧셈예제</title>
+		<script>
+		
+		
+			function calc(n){
+				var x = document.getElementById("x").value;
+				var y = document.getElementById("y").value;
+				
+				var sum, minus,multiple,divide;
+				
+				if(n == 1){
+					sum = (x*1+y*1);
+					document.getElementById("sum").value = sum;
+					
+				}else if( n ==2){
+					minus = parseInt(x)-parseInt(y);
+					document.getElementById("minus").value = minus;
+				  
+				}else if (n == 3){
+					multiple = x*y;
+					document.getElementById("multiple").value = multiple;
+				
+				}else if(n == 4){
+					divide = parseInt(x/y);//아예 정수형으로
+					document.getElementById("divide").value= divide;
+					
+				}
+				/* 
+				var sum;
+				sum = (x*1+y*1);
+				var minus = parseInt(x)-parseInt(y);
+				 */
+				
+				
+			}
+			/* 
+			
+			function calm(){
+				var x = document.getElementById("x").value;
+				var y = document.getElementById("y").value; 
+				
+				var minus;
+				minus = parseInt(x)-parseInt(y);
+				
+				document.getElementById("minus").value = minus;
+			} */
+		</script>
+	</head>
+	
+	<body>
+		<form>
+
+			x :<input type="text" id="x"><br>
+			y :<input type="text" id="y"><br>
+			
+			
+			<input type="button" value ="합계계산" onclick="calc(1);">
+			합계 :<input type="text" id="sum"><br>
+			
+			<input type="button" value ="마이너스계산" onclick="calc(2);">
+			마이너스 합계 :<input type="text" id="minus"><br>
+			
+			<input type="button" value="곱셈계산" onclick="calc(3);">
+			두수의 곱:<input type="text" id="multiple"><br>
+			
+			<input type="button" value="나눗셈계산" onclick="calc(4);">
+			두수의 나눈 몫:<input type="text" id="divide"><br> 
+		
+
+		</form>
+	</body>
+</html>

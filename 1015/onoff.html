@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>on off</title>
+	
+	<script>
+		function images(){
+		document.getElementById("img1").firstChild.src = "../imgs/"+imgarr[idx];
+		}
+		
+		function change(src){
+			
+			var str = document.getElementById('img1').src;
+			console.log(str);
+			var arr = str.split("/");
+			console.log(arr);
+			if(arr[8]=="on.jpg"){
+				document.getElementById('img1').src="../imgs/off.jpg";
+			}else if(arr[8]=="off.jpg"){
+				document.getElementById('img1').src="../imgs/on.jpg";
+			}
+			
+		}	
+	</script>
+	</head>
+	<body>
+		
+		<button onclick="change()"><img src="../imgs/on.jpg" id="img1"></button>
+	</body>
+</html>

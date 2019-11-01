@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>tryCatch2</title>
+	</head>
+		<script>
+		
+		function add(){
+			var x=document.getElementById("number1").value;
+			var y=document.getElementById("number2").value;
+			console.log(x);
+			console.log(y);
+			
+			if(y<x){
+				document.getElementById("msg").innerHTML="수를 다시 입력하세요";
+				add();
+			}else if(y>=x){
+				document.getElementById("msg").innerHTML= parseInt(x) + parseInt(y);
+			}
+			
+			//4)try catch문 이용하기.
+		}
+		
+		</script>
+		
+	<body>
+		x:<input type="text" id="number1" >	
+		y:<input type="text" id="number2" >
+		<button onclick="add();">합계</button>	
+		<p id="msg"></p>
+	</body>
+</html>

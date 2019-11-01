@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Calender</title>
+		<style>
+		table{
+			border:1px solid black;
+			}
+		
+		td{
+			border:1px solid black;
+			width: 70px;
+			height:70px;
+			text-align:center;}
+		
+		</style>
+		
+		<script>
+		/* 7*7 */
+		
+		
+		
+		/* 7*7 */
+		var now= new Date();
+		var year = now.getFullYear();
+		var month = now.getMonth();
+		var day = now.getDate();
+		var firstday= new Date(year,month,1);
+		var lastday= new Date(year,month+1,0).getDate();
+		//.getDate()를 해야 마지막 일을 가지고 올 수 있음.
+		var yoil = firstday.getDay();
+		
+		
+		var days=["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+		
+		var strhtml="";
+	
+		strhtml += "<table>";
+		strhtml += 	"<tr>";
+		strhtml += 		"<td>";
+		strhtml += 		"&lt";
+		strhtml += 		"</td>";
+		
+		strhtml += 		"<td colspan='5'>";
+		strhtml += year + "년" + (month+1) + "월";
+		strhtml += 		"</td>";
+		
+		strhtml += 		"<td>";
+		strhtml += 		"&gt";
+		strhtml += 		"</td>";
+		strhtml += "</tr>";
+
+		
+		 strhtml += "<tr>";
+		
+		for(var i=0;i<7;i++){
+				strhtml += "<td>";
+				strhtml += days[i];//변수는 ""를 안씀.
+				strhtml += "</td>";
+			}
+		
+		strhtml += "</tr>"; 
+		console.log(lastday);
+		var n =1;
+		for(var i =1;i<=lastday+yoil ;i++){
+		
+			if (i%7 == 1){
+				strhtml+= "<tr>";
+				}
+		
+			
+			if(yoil>=i){
+				strhtml+="<td></td>";
+			}else{			
+			
+				strhtml+="<td>";
+				strhtml+= (n++);
+				strhtml+="</td>";
+			
+			}
+			
+			if(i%7 == 0){
+			strhtml+="</tr>";
+				}
+		}
+	
+		
+		
+		
+		
+		
+		
+		strhtml +="</table>";
+		
+		window.onload = function(){
+			document.getElementById("result").innerHTML = strhtml;
+		}
+		
+		
+		
+	
+		</script>
+	</head>
+	
+	<body>
+		<div id="result"></div>
+	
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>form을 이용한 문제</title>
+	<script>
+		
+		function proc1(){
+			
+			var f = document.fm;/* form 전체 상자가 들어온거 */
+			var nm= f.nm.value;
+			var gender= f.gender.value;
+			var ment="";
+			/* alert(nm);
+			alert(gender); */
+			
+		/* 	for(var i =0; i<f.hobby.length;i++){
+				if(f.hobby[i].checked){
+					alert(f.hobby[i].value);
+				}
+			}  */
+		
+			/* var habit = document.fm.hobby.value; */
+		 	var hob="";
+			for(var i =0; i<f.hobby.length;i++){
+				if(f.hobby[i].checked){
+					hob+=(f.hobby[i].value)+",";
+				}
+			}
+			
+			for(var i =0;i<f.gender.length;i++){
+				if(f.gender[i].checked){
+					gen=(f.gender[i].value);
+				}
+			}
+			
+				ment += nm+"씨"+"\n";
+				ment +="당신은"+gen+"이고\n";
+			ment += "취미는 "+hob+"이군요.";
+			
+			var last= hob.lastIndexOf(",");
+			ment +=hob.substring(0,last);//last직전까지만 가저오기
+			ment +="이군요!" ;
+			
+			
+			document.getElementById("text").innerHTML= ment;
+		
+		}
+		
+		//body에 있는 name 값을 함수에서 불러올 수 있음.
+	</script>
+	</head>
+	<body>
+		<form name ="fm" onsubmit="return false;">
+			<p>이름: <input type= "text" size ="15" name= "nm" ></p>
+			<p>성별 : <input type ="radio" name="gender" value="남자" checked>남자&nbsp;&nbsp;&nbsp;<input type ="radio" name="gender" value="여자"> 여자</p>		
+			
+			<p>
+			취미: <input type="checkbox" name="hobby" value="여행">여행&nbsp;&nbsp;
+			 <input type="checkbox" name="hobby" value="독서">독서&nbsp;&nbsp;
+			 <input type="checkbox" name="hobby"value="영화감상">영화감상&nbsp;&nbsp;
+			 <input type="checkbox" name="hobby"value="바둑">바둑&nbsp;&nbsp;
+			 <input type="checkbox" name="hobby"value="장기">장기&nbsp;&nbsp;
+			 <input type="checkbox" name="hobby"value="등산">등산&nbsp;&nbsp;
+			 <input type="checkbox" name="hobby"value="낚시">낚시&nbsp;&nbsp;
+			</p>
+			
+			<button onclick="proc1()">결과 출력</button><br>
+		
+			<textarea rows="10" cols="100" id="text" id="text"></textarea>
+			
+			
+		</form>
+	</body>
+</html>

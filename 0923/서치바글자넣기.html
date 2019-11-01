@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>구조실습용</title>
+	<style>
+	
+	div {border:1px solid;margin:10px;}
+	
+	#wrapall{
+	
+		width:1050px;
+		height:1200px}
+		
+	#header{
+		width:1000px;height:120px;margin:10px;}
+	
+	#contents{
+		width:1000px;height:850px;margin:10px;}
+	#content1{
+		width:950px;height:100px;margin:10px;}
+	#rank{
+		margin:10px;
+		float:right;
+		overflow:hidden;/*scroll //scroll높이 만큼 보이고 나머지는 스크롤 처리 */
+		height:50px;}
+		
+	.item{
+		
+		list-style:none;
+		display: inline;
+		margin:0px 8px;
+	}	
+	
+	#content2{
+		width:950px;height:560px;margin:10px; }
+		
+	#news{width:600px;height:480px;float:left;margin:10px;}
+	#notice{width:550px; height:300px;margin:10px;margin:10px;}
+	#notice_detail1{width:160px;height:250px;float:left;margin:10px;}
+	#notice_detail2{width:160px;height:250px;float:left;margin:10px;}
+	#notice_detail3{width:160px;height:250px;float:left;margin:10px;}
+	#banner{width:550px; height:100px;margin:10px;}
+	
+	#aside{width:300px;height:480px;float:right;margin:10px;}
+	#ad1{width:280px;height:80px;margin:10px;}		
+	#ad2{width:280px;height:80px;margin:10px;}		
+	#ad3{width:280px;height:250px;margin:10px;}	
+	
+	#footer{width:1000px;height:180px;margin:10px;}
+	.notice{width:950px;height:70px;margin:10px;}
+	#ad {width:630px;height:70px;float:left;margin:10px;}
+	.ad2{width:300px;height:70px;float:left;margin:10px;}
+		
+	form{
+		text-align:center;
+		padding:30px 200px;}
+
+	
+	
+	</style>
+	</head>
+	
+	<body>
+	<div id="wrapall">
+		<div id ="header">
+
+			<form>
+				<span><a href="http://www.naver.com">네이버</a></span>
+				<input type="text" size="60"id="search" >
+				<span><a href="#">검색</a></span>
+			</form>
+			
+		</div> 
+		
+		<div id ="contents">
+		
+			<div id ="content1">
+			
+					<ul>
+						<li class="item"><input type="image" src="../imgs/mail.png"alt="mail" onclick="javascript:window.open('http://www.naver.com')"></li>
+						<li class="item"><input type="image" src="../imgs/cafe.png"alt="cafe" onclick="javascript:window.open('http://www.naver.com') "></li>
+						<li class="item"><input type="image" src="../imgs/blog.png"alt="blog" onclick="javascript:window.open('http://www.naver.com') "></li>
+						<li class="item"><input type="image" src="../imgs/knowledge.png"alt="knowledge" onclick="javascript:window.open('http://www.naver.com')"></li>
+						<li class="item"><input type="image" src="../imgs/shopping.png"alt="shopping"onclick=" javascript:window.open('http://www.naver.com')"></li>
+						<li class="item"><input type="image" src="../imgs/tv.png"alt="tv" onclick=" javascript:window.open('http://www.naver.com') "></li>
+						<li class="item"><input type="image" src="../imgs/dicctionary.png"alt="dicctionary"onclick="javascript:window.open('http://www.naver.com') "></li>
+						<li class="item"><input type="image" src="../imgs/news.png"alt="news"onclick=" javascript:window.open('http://www.naver.com') "></li>
+						<li class="item"><input type="image" src="../imgs/asset.png"alt="asset"onclick="javascript:window.open('http://www.naver.com') "></li>
+						<li class="item"><input type="image" src="../imgs/realestate.png"alt="realestate"onclick=" javascript:window.open('http://www.naver.com') "></li>
+						<li class="item"><input type="image" src="../imgs/maps.png"alt="maps"onclick=" javascript:window.open('http://www.naver.com') "></li>
+						<li class="item"><input type="image" src="../imgs/movies.png"alt="movies"onclick=" javascript:window.open('http://www.naver.com') "></li>
+						<li class="item"><input type="image" src="../imgs/music.png"alt="music"onclick=" javascript:window.open('http://www.naver.com') "></li>
+						<li class="item"><input type="image" src="../imgs/books.png"alt="books"onclick="javascript:window.open('http://www.naver.com') "></li>
+						<li class="item"><input type="image" src="../imgs/webtoons.png"alt="webtoons"onclick=" javascript:window.open('http://www.naver.com') "></li>
+					</ul>
+				
+			
+			
+				<div id="rank">
+					<ol>
+						<li>나코마유효능</li>
+						<li>xz페스티벌</li>
+						<li>우리가 조국이다</li>
+						<li>가나다</li>
+						<li>라마바사</li>
+						<li>나코 마유크림</li>
+						<li>abcd</li>
+						<li>efgf</li>
+						<li></li>
+						<li></li>
+						<li></li>
+						</ol>
+				</div>
+				
+			</div> 
+			
+			<div id="content2">
+			
+				<div id= "news">
+					<div id= "notice">
+						<div id ="notice_detail1"></div> 
+						<div id ="notice_detail2"></div> 
+						<div id ="notice_detail3"></div>
+					</div> 
+					<div id ="banner"></div> 
+				</div>
+				
+				<div id="aside">
+					<div id ="ad1"></div> 
+					<div id ="ad2"></div> 
+					<div id ="ad3"></div>
+				</div>
+			</div>	
+		</div> 
+		
+		<div id ="footer">
+			<div class ="notice"></div> 
+			<div id ="ad"></div> 
+			<div class ="ad2"></div> 
+		</div>
+		
+	</div>
+	</body>
+</html>

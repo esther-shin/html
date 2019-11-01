@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+			function test(){
+				try{
+					alert("hello world!");
+				}catch(e){
+					msg="다음과 같은 오류가 발생함:"+e.massage;
+					alert(msg);
+					//msg주석으로 넣으면 아예 오류가 안남.
+				}finally{
+					alert("finally")
+					//오류가 있던 없던 그냥 찍어줌
+				}
+			}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>배열객체</title>
+	<script>
+		 var str = new Array();
+		 str =["이정은","이선욱","조건희","최효은"];
+		 str2=["김영호","박희제","한솔비"];
+		/* 
+		
+		
+		 function index(){
+			 
+			 var vname = prompt("이름넣어주세요");
+			 //name 키워드라 오류남
+			 return str.indexOf(vname);
+			 
+			 
+		 }
+		 
+		 function lastIdx(){//뒤에서부터 찾는거
+			 
+			 var vname = prompt("이름을 넣어주세요");
+			 
+			 return str.lastIndexOf(vname,3);//3번째 부터 확인.
+		 }
+		 
+		var idx = lastIdx();
+		document.write(idx);
+		 */
+		 
+		function pushArr(){
+			
+			str.push("김혜정");
+			str.unshift("이정은");//Stack 코드에서 사용하면 나머지 요소가 다 망가짐.
+			//shift는db랑 연결했을때는 괜찮음.
+			return str;
+		}
+		
+		 function reverseArr(){
+			 	str.reverse();//모든 배열 객체에는 소괄호가 붙음. 
+			 	//앞뒤 순서가 바뀌는.
+			 	return str;
+		 }
+		 
+		 function sortArr(){
+			 str.sort();//숫자값이 있을때만 안에 써주면 됨.
+			 return str;
+		 }
+		 
+		 function joinArr(){
+			 
+			 str = str.join("*");//변수값 str=을 붙여줘야됨
+			 return str;
+		 }
+		 
+		 function concatArr(){
+			str2= str2.concat(str);//str2=를 안쓰면 솔비만 빠짐
+			 str2.pop();
+			 return str2.concat(str);
+		 }
+		 
+		 function sliceArr(){
+			 //str =["이정은","이선욱","조건희","최효은"];
+			 str= str.slice(1,2);
+			 //1이상 2미만. a.subString();이랑 비슷 기능 chop한다고 생각.
+			 return str;
+		 }
+		 
+		document.write(index());
+		
+		
+		
+	</script>
+	
+	</head>
+	<body>
+		<h1>indexOf</h1>
+		<p>앞에서 부터 찾는다(배열의 순서)</p>
+		<h1>lastIndexOf</h1>
+		<p>뒤에서 부터 찾는다.</p>
+		
+		<h1>push</h1>
+		<p>배열의 맨 뒤에 넣는다</p>
+		<h1>pop</h1>
+		<p>배열의 맨 뒤에 요소를 뺀다.</p>
+		
+		
+		<h1>sort</h1>
+		<p>기본 sort는 오름차순
+		만약 숫자 오름차순을 원할 경우 함수를 반드시 사용한다
+		function(a,b){return a-b;}
+		</p>
+		
+		<h1>concat</h1>
+		<p>두개의 배열을 결합해서 한개의 배열로 생성
+		배열 1 + 배열2 = 새로운 배열
+		</p>
+		
+		<h1>join</h1>
+		<p>배열 +문자열로 변환
+		기본은 ,로 생성되지만 원하는 문자열로 구분자를 생성
+		(1,3)의 경우 3 미만 까지만 적용. 뒤에 숫자가 포함되지 않음.
+		</p>
+		
+		<h1>slice</h1>
+		<p>배열의 index로 요소를 자름</p>
+		
+		
+	</body>
+</html>

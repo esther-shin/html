@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>String 객체</title>
+	<script>
+		
+		var s ="우리나라 대한민국 좋은나라"
+		//해당 index의 문자를 리턴(index범위를 벗어나면 빈 문자열이 된다.)
+		document.write(s.charAt(2)+"<br>");
+	
+		//인덱스 위치의 문자에 대한 유니코드를 구한다.
+		document.write(s.charCodeAt(2)+"<br>");	
+		
+		
+		//indexOf (문자열, 시작위치): 시작위치가 생략되면 0이고 문자열이 없을 경우 -1을 리턴한다.
+		document.write(s.indexOf("나라")+"<br>");//시작하는 시점 인덱스
+		
+		//역방향으로 검색한다.
+		document.write(s.lastIndexOf("나라")+"<br>");//뒤에서 부터 카운팅 시작(시작하는 인덱스 숫자 값으로)
+		
+		
+		var s1 = "I love";
+		var s2 = "YOU";
+		
+		
+		document.write(s1.concat(" ", s2,"뭐라고?"+"<br>"));
+		
+		var str = s1.concat(s2);
+		
+		var lower = str.toLowerCase();//
+		var upper = str.toUpperCase();//
+		
+		document.write(lower + "/" + upper +"<br>");
+		
+		
+		var newstr= str.replace("YOU", "유지상");
+		
+		document.write(newstr +"<br>");
+		
+		document.write("<hr>");
+		
+		//부분 문자열 또는 정규식을 검색하여 그 위치를 리턴한다.
+		var str = "한글문자열 search 함수 테스트";
+		var result =str.search("함수");//13이 출력됨
+		
+		document.write(result);
+		document.write("<hr>");
+		
+		var str = "red blue orange";
+		document.write(str.match('blue'));//자기가 찾은 문자열을 그냥 문자열로 반환을 해줌.
+		document.write("<hr>");
+		
+		var test = "I love you. I love me. I love everything.";
+		var regExp =/LOVE/gi;// g 모든 문자를 찾는다. i 대소문자 구분 없음
+		
+		document.write(test.match(regExp));
+		/*
+		g:모든 전역에서 찾는다(첫번째 일치하는 문자열을 찾아도 끝까지 검색)
+		i:대소문자 구분없이 찾는다.
+		m:멀티라인도 수행
+		u:패턴을 유니코드 코드포인트의 나열로 취급
+		y:"stick" 검색을 수행, 지정된 인덱스로 문자열 검색
+	
+		*/
+		document.write("<hr>");
+		var str ="I love you";
+		
+		var a = str.substring(2,6);
+		/*
+		substring(from,to):두위치 사이의 구분 문자열을 추출한다.
+		  substring(from): from위치에서부터 끝까지 추출(to 생략됨)
+		*/
+		var res = "원래: "+str+"<br>";
+		res += "substring(2,6):" +a+ "<br>";
+		
+		document.write(res);
+		document.write("<hr>");
+		
+		
+		
+		a= str.slice(2,6);
+		var res = "원래: "+str+"<br>";
+		res += "slice(2,6):" +a+ "<br>";
+		/*
+		slice(from,to): from 위치에서 to 위치까지 부분 문자열을 추출한다.
+		*/
+		document.write(res);
+		document.write("<hr>");
+		
+		
+		a= str.substr(2,4);
+		var res = "원래: "+str+"<br>";
+		res += "substr(2,6):" +a+ "<br>";
+		
+		document.write(res);
+		document.write("<hr>");
+		
+		
+		/*구분자로 구분된 문자열을 분리하여 배열로 리턴한다.*/
+		var str = "현솔비/박희제/김영호/최도혁/백운영/조아라"
+		
+		var arr = str.split("/");
+		
+		document.write(arr + "<br>");
+		
+		for(var i=0;i<arr.length;i++){
+			document.write(arr[i]+"<br>");
+		}
+		
+		
+		function compare(){
+			var e =document.getElementById("email").value;// 값가져오기
+			var str = "s2shinesther@gamil.com"
+			
+			if(str ==e.trim){
+			/* if(e == str) *///trim 공백 제거
+				confirm("두 이메일이 동일합니다.");
+					
+				}else{
+					confirm("두 이메일이 불일치 합니다.")
+				}
+			}
+		
+		
+	</script>
+	</head>
+	<body>
+	<input type="text" id="email">
+	<button onclick="compare();">확인</button>
+	
+	</body>
+</html>

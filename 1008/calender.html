@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>calender</title>
+	<style>
+	table{border:1px solid black;
+	width:490px;height:490px;
+	text-align:center;}
+	
+	tr{border:1px solid black;
+		text-align:center;}
+		
+	td{border:1px solid black;
+		width:70px;height:70px;
+		text-align:center;}
+		
+		
+	</style>
+
+
+	<script>
+	
+	var now= new Date();
+	var strhtml="";
+	
+	strhtml = document.write("<table>");
+	
+	strhtml += document.write("<tr>");
+	strhtml += document.write("<td>" + "&lt;" + "</td>");
+	strhtml += document.write("<td colspan = '5'>" + now.getFullYear() + now.getMonth()+1 + "</td>");
+	strhtml += document.write("<td>" + "&gt;" + "</td>");
+	strhtml += document.write("</tr>");
+	
+	
+	strhtml += document.write("<tr>");
+	strhtml += document.write("<td>" + "일" + "</td>");
+	strhtml += document.write("<td>" + "월" + "</td>");
+	strhtml += document.write("<td>" + "화" + "</td>");
+	strhtml += document.write("<td>" + "수" + "</td>");
+	strhtml += document.write("<td>" + "목" + "</td>");
+	strhtml += document.write("<td>" + "금" + "</td>");
+	strhtml += document.write("<td>" + "토" + "</td>");
+	strhtml += document.write("</tr>");
+	
+	
+	int calender = new Array();
+	for(int i=0;i<=30;i++){
+		calender[i]= i+1;
+	} 
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	strhtml += document.write("</table>"); 
+	
+	window.onload = function() {
+		document.getElementById('cal').innerHTML = strhtml;
+	}
+	
+	
+	
+	</script>
+	
+	</head>
+	<body>
+	<p id="cal"></p>
+	</body>
+</html>

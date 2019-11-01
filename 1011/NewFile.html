@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>newfile</title>
+	<script>
+	
+	var dia = new Date();
+	
+function proc7(){
+		
+		var selDate = document.getElementById("pdate").value;
+		selDate = new Date(selDate);
+		console.log(selDate);
+		
+		
+		/*오늘을 기준으로 환불일이 7일이내의 것만 가능하다
+		구입한 날을 설렉트하여 환불이 가능한지 아닌지 확인하세요
+		날짜 ~2019년 10월2일부터 10월 8일까지는 "환불이 가능합니다."
+		이외의 날짜는 "환불이 불가능합니다"
+		오늘 이후의 날짜를 설렉하면"다시 선택해주세요"
+		텍스트는 innerHTML로 넣어주기*/
+		
+		var today= new Date();
+		var refundDate = today -7 *3600*24*1000;
+		var ment="";
+		
+		if(selDate>today){
+			ment="다시 선택해주세요";
+		}else if(selDate<refundDate){
+			ment="환불이 불가능합니다.";
+		}else{
+			ment="환불이 가능합니다.";
+		}
+	
+	document.getElementById("mention").innerHTML=ment;
+	}
+	
+	
+	
+	window.onload=function(){
+		proc7();
+	}
+	
+	</script>
+	
+	</head>
+	<body>
+	<!-- <div id="res"></div> -->
+	<input type="date" id="pdate">
+	
+	<button type="button" onclick="proc7();">환불</button>
+	<p id="mention"></p>
+	</body>
+</html>

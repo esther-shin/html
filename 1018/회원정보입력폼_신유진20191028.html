@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>회원정보입력폼</title>
+		
+	</head>
+	<body>
+	
+	<h1>회원정보입력폼</h1>
+	<fieldset>
+	<table>
+	
+		<legend class="round" style="border-style:solid;" >회원정보입력</legend>
+		
+				<tr>
+				<td>아이디</td>
+				<td><input type="text" name="id">
+				<button type="button" name="button">중복검사</td>
+				</tr>
+				
+			<tr>
+			<td>이름</td>
+			<td colspan="2"><input type="text" name="name"></td>
+			</tr>
+			
+			<tr>
+			<td>생년월일</td>
+			<td colspan="2"><input type="text" name="name"></td>
+			</tr>
+			
+			<tr>
+			<td>비밀번호</td>
+			<td colspan="2"><input type="password" name="pass"></td>
+			</tr>
+			
+			<tr>
+			<td>비밀번호확인</td>
+			<td colspan="2"><input type="password" name="pass"></td>
+			</tr>
+			
+			<tr>
+			<td>성별</td>
+			<td colspan="2"><p><input type ="radio" name="gender" value="여성" >여성&nbsp;&nbsp;<input type ="radio" name="gender" value="남성"> 남성</p>
+			</tr>
+			
+			<tr>
+			<td>전화번호</td>
+			<td colspan="2"><input type="text" name="tel"></td>
+			</tr>
+			
+			<tr>
+			<td>휴대폰 번호</td>
+			<td colspan="2"><input type="text" name="tel"></td>
+			</tr>
+			
+			<tr>
+			<td>이메일</td>
+			<td colspan="2"><input type="email" name="email"></td>
+			</tr>
+			
+			
+			
+				<tr>
+				<td>우편번호</td>
+				<td><input type="text"name="text">
+				<button type="button" name="button">우편번호</td>
+				</tr>
+			
+			
+			<tr>
+			<td>주소</td>
+			<td ><input type="text"name="text" size= "50"></td>
+			</tr>
+			
+			
+			<tr>
+			<td>상세주소</td>
+			<td ><input type="text"name="text" size= "50"></td>
+			</tr>
+				
+		
+	</table>
+	</fieldset>
+		
+		<form>
+		<input type="submit" value="제출">
+		<input type="button" value="초기화" onclick="javascript:history.go(0);">
+		</form>
+		
+		
+	
+	</body>
+</html>

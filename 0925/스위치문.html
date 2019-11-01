@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+		<title>스위치</title>
+		<script>
+			
+		
+		
+		//var grade = prompt("성적을 입력하세요!","A-F사이의 문자로(E학점빼고)");
+		 /* 
+			switch(grade){
+				case "A" : alert("참 잘했어요!");
+							break;
+				case "B" : alert("잘 했어요!");
+							break;
+				case "C" : alert("그냥 그래요!");
+							break;
+				case "D" : alert("재수강 하세요!");
+							break;
+				default:
+					alert("알 수 없는 학점입니다.");
+			}
+			 */
+			 
+			 
+			var input1 = prompt("가위바위보를 입력하세요","첫번째 사람");
+			var input2 = prompt("가위바위보를 입력하세요","두번째 사람");
+			//조건문을 넣어주세요
+			if((input1 == "가위" && input2 == "보")||(input1 == "바위"&& input2 == "가위")||(input1 == "보"&& input2 == "주먹")){
+				alert("첫번쨰 사람이 승리하셨습니다");
+			}else if((input1 == "가위" && input2 == "바위")||(input1 == "바위"&& input2 == "보")||(input1 == "보"&& input2 == "가위")){
+				alert("두번쨰 사람이 승리하셨습니다");
+			}else{
+				alert("비겼습니다");
+			}
+			
+			
+			
+			/* 
+			if(input1 == "바위"&& input2 == "가위"){
+				alert("첫번쨰 사람이 승리하셨습니다");
+			}else if(input1 == "바위"&& input2 == "보"){
+				alert("두번쨰 사람이 승리하셨습니다");
+			}else{
+				alert("비겼습니다");
+			}
+			
+			if(input1 == "보"&& input2 == "주먹"){
+				alert("첫번쨰 사람이 승리하셨습니다");
+			}else if(input1 == "보"&& input2 == "가위"){
+				alert("두번쨰 사람이 승리하셨습니다");
+				}else{
+					alert("비겼습니다");
+				}
+			 */
+			//결과값 :첫번쨰 사람이 승리하셨습니다.
+			//두번쨰 사람이 승리하셨습니다.
+			//결과값 :첫번쨰 사람이 승리하셨습니다.
+			
+			
+			
+		</script>
+		</head>
+	<body>
+	
+	</body>
+</html>

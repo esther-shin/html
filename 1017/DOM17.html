@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+		
+		
+		</script>
+	</head>
+	<body onload="changeColor()" >
+		<!-- <ul>
+			<li>list item1</li>
+			<li>list item2</li>
+			<li>list item3</li>
+			<li>list item4</li>
+			<li>list item5</li>
+		</ul>
+		
+		<div id="target" onclick="addText('까꿍');">여기를 클릭하세요</div>
+		<div id="target2">
+			<p id="p1">첫번째 단락</p>
+			<p id="p2">두번째 단락</p>
+			<p id="p3">세번째 단락</p>
+		</div>
+		<button onclick="removeNode()">삭제</button> -->
+		
+		<!-- <div id="a" onclick ="removepic1()"><img src="../imgs/coffee.jpg" width=200; id ="aa";></div>
+		<div id="b" onclick ="removepic2()"><img src="../imgs/scene.jpg" width=200; id ="bb";></div>
+		<div id="c" onclick ="removepic3()"><img src="../imgs/spain.jpg" width=200; id ="cc";></div>
+		<div id="d" onclick ="removepic4()"><img src="../imgs/구름.jpg" width=200; id ="dd";> </div>
+		<div id="e" onclick ="removepic5()"><img src="../imgs/커피.jpg" width=200; id ="ee";></div> -->
+		
+		<!-- 이미지 5개를 생성해서 그 이미지를 클릭하면 해당 이미지가 
+		삭제되도록 프로그래밍 하세요.  -->
+		<!-- <button onclick="changeColor();">시작</button> -->
+		<div id = "img1" ><img src="../imgs/구름.jpg" width=200;"></div>
+		<button onclick="stop();">중지</button>
+		
+		<!-- 이미지 5개를 1초마다 하나씩 보이게 프로그래밍 해주세요
+		디폴트로 1개 이미지만 보이고, 1초마다 이미지가 바뀌게 만들어 주세요. -->
+		
+		<script>
+		/* window.onload= function(){
+			srcChange();
+		}
+		 */
+		var idx = 0;
+		function srcChange(){
+			imgarr= ["컴퓨터.jpg","식품.jpg","구름.jpg","호랑이.jpg","커피.jpg"];
+		
+			if( idx >= 5 ){
+				idx = 0;
+			}
+			
+			document.getElementById("img1").firstChild.src = "../imgs/"+imgarr[idx++];
+			document.getElementById("img1").firstChild.width = 200;
+		}
+		
+		function changeColor(){
+			id= setInterval(srcChange,1000);//flash함수를 1초마다 호출
+		}
+		
+		function stop(){
+			clearInterval(id);
+		}
+		
+		
+		function removepic1(){
+			var parent = document.getElementById("a");
+			var child = document.getElementById("aa");
+			
+			parent.removeChild(child);
+		}
+		
+		function removepic2(){
+			var parent = document.getElementById("b");
+			var child = document.getElementById("bb");
+			
+			parent.removeChild(child);
+		}
+		
+		function removepic3(){
+			var parent = document.getElementById("c");
+			var child = document.getElementById("cc");
+			
+			parent.removeChild(child);
+		}
+		
+		function removepic4(){
+			var parent = document.getElementById("d");
+			var child = document.getElementById("dd");
+			
+			parent.removeChild(child);
+		}
+		
+		function removepic5(){
+			var parent = document.getElementById("e");
+			var child = document.getElementById("ee");
+			
+			parent.removeChild(child);
+		}
+		
+		var i=0;
+		function rolling(){
+			imgarr=["computer","foods","tiger","cloud","coffee"];
+			
+			var parent= document.getElementById("target3");
+			parent.innerHTML="";
+			
+			imgC = document.createElement("img");
+			
+			if(i>=imgarr.length) i=0;
+			imgC.src= "../img/"+imgarr[i++]+".jpg";//
+			
+			parent.appendChild(imgC);
+		}
+		
+		 /* 	var list = document.getElementsByTagName("ul")[0];
+			var allItems = list.getElementsByTagName("li");
+			
+			for(var i =0; i<allItems.length;i++){
+				alert(allItems[i].firstChild.data);
+			} 
+			
+			function addText(str){
+				var node = document.createTextNode(str);//create text를 감싸준다.
+				document.getElementById("target").appendChild(node);//append붙인다.
+			}
+		
+			function removeNode(){
+				var parent = document.getElementById("target2");
+				var child = document.getElementById("p2");
+				
+				parent.removeChild(child);
+			} */
+		</script>
+	</body>
+</html>

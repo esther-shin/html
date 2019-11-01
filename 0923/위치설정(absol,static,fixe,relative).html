@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>위치설정</title>
+	<style>
+	
+	
+	p,div{
+		width:200px;
+		height:50px;
+		}
+	
+	#one{
+		background-color:cyan;
+		
+	}
+	#two{
+		background-color:yellow;
+		postion:fixed;/* 브라우저 윈도우에 상대적으로 요소의 위치르 잡는것 */
+		right:0px;
+		/*position: absolute;/*전체 페이지 기준(기본 마진 패딩이 있음. 원래는)으로 시작 위치에서 top만큼 떨어진다.*/
+		top:100px;
+		left:30px; 
+		/*position:static; 고정값이라서 left right가 먹지 않음. 두개다 쓰면 밑에껄로  */
+		/*position:relative;//정적인 위치에서 상대적으로 요소가 배치  
+		left:30px;	
+		top:100px;*/
+		
+	}
+	#three{
+		background-color:lightgreen;
+		
+	}
+	
+	
+	</style>
+	
+	
+	
+	</head>
+	<body>
+	
+	<!-- 정적 위치 설정  -->
+	<p id="one">block#1</p>
+	<div id="two">block#2
+	</div>
+	<p id="three">block #3</p>
+	</body>
+</html>

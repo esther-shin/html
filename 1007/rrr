@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+	/* var str = "신유진";
+	
+	var str2 = "신유진 ㅄ";
+	document.write(str2);
+	
+	
+	window.onload =function(){
+		document.getElementById("result").innerHTML= str;
+	}
+ 	*/
+	
+	 function result(str,k){
+		// alert(str);
+		
+			//str="날씨"+k;
+			 return str+k;
+	 }
+	 
+	//var r = result("신유진",10);//함수밖에서 함수 호출
+	 document.write(result("신유진",10));
+	//변수 일때만 따움표 없이 쓰기
+	</script>
+	</head>
+	<body>
+	<!-- <div id="result"></div> -->
+	</body>
+	</html>

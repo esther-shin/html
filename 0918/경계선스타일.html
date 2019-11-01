@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>경계선스타일</title>
+
+	<style>
+		.green{
+			border: 10px solid green ;
+			}
+		
+		p.round {
+			border-radius:  25px;
+		}
+		
+		div.abc{
+		height:100px;
+		width:100px;
+		background-color : yellow;
+		box-shadow: 20px 10px 5px #555555;
+		}
+	
+		#target1{
+			width:100px;
+			height: 100px;
+			background-color: blue;
+		}
+		
+		#target2{
+			width:100px;
+			height: 100px;
+			background-color: pink;
+		}
+		
+		#target3{//span은 인라인 요소여서 width와 heigh는 어차피 안먹음.
+			width:100px;
+			height: 100px;
+			background-color: yellow;
+		}
+	
+	</style>
+	</head>
+
+	<body>
+	 
+		<p class="green">p태그입니다.</p>
+		<p class="round" style="border-style:solid;" >p태그입니다.</p>
+		<p style="border-style:dotted;">p태그입니다.</p>
+		<p style="border-style:dashed;">p태그입니다.</p>
+		<p style="border-style:double;">p태그입니다.</p>
+		<p style="border:10px; border-style:groove;">p태그입니다.</p>
+		<p style="border:10px; border-style:inset;">p태그입니다.</p>
+		<p style="border:10px; border-style:outset;">p태그입니다.</p>
+		<p style="border:10px; border-style:ridge;">p태그입니다.</p>
+		<p style="border-style:none;">p태그입니다.</p>
+
+	  
+	
+	<div class="abc">1111</div>
+	<div id="target1"></div>
+	<p id="target2"></p>
+	<span id="target3">강의실 안전수칙</span>
+	
+	
+	</body>
+</html>

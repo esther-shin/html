@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>date객체</title>
+		<script>
+			var now = new Date();
+			
+			function proc1(){
+				var now2 = new Date(1000000);
+				//1000초가 지난것(1970년 1월1일 0시0분으로부터)
+				var now3 = new Date("2019.10.08");
+				var now4 = new Date(2019,1,1); 
+				//month에 해당하는 인수는 0부터(1월)시작
+				//설정된 월수보다 1을 크게 값을 얻는다 . 
+				// 07로 설정하면 -> 8월로 표시된다
+				
+				console.log(now4);
+			}
+			
+			function proc2(){
+				
+				result = now +"<br>";
+				
+				result += now.toDateString() +"<br>";
+				result += now.toUTCString() +"<br>";
+				result += now.toJSON() +"<br>";
+				result += now.toLocaleString() +"<br>";
+				result += now.toLocaleDateString() +"<br>";
+				result += now.toLocaleTimeString() +"<br>";
+				
+				document.getElementById("res").innerHTML = result;
+				
+				
+			}
+			
+			function proc3(){
+				var day = now.getDay();
+				/*0~6 (0은 일요일 6은 토요일)*/
+				console.log(day);
+				
+				/*위의 숫자값을 요일로 변환하세요.(switch이용, 배열이용)*/
+				/*결과값 : 오늘은 화요일 입니다.*/
+				/*출력은 1군데서만(case에 변수를 활용해서 넣어주세요)*/
+				var strDay = "";
+				switch(day){
+				case 0: strDay = "일";
+						break;
+				case 1: strDay = "월";
+						break;
+				case 2: strDay = "화";
+						break;
+				case 3: strDay = "수";
+						break;
+				case 4: strDay = "목";
+						break;
+				case 5: strDay = "금";
+						break;
+				case 6: strDay = "토";
+						break;				
+				}
+				
+				console.log("오늘은 "+strDay+"요일 입니다.");
+				
+				
+				
+				var days = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+				console.log(days[day]);
+				
+			}
+			
+			
+			function proc4(){
+				console.log("오늘 날짜:"+now.getDate()); 
+				console.log("오늘 월(+1)이번달이 10월이면 9의 값을 가져온다:"
+								+now.getMonth());
+				console.log("오늘 연도:"+now.getFullYear());
+				console.log("오늘 시간(0~23)"+now.getHours());
+				console.log("오늘 분(0~59)"+now.getMinutes());
+				console.log("오늘 초(0~59)"+now.getSeconds());
+				
+				console.log("오늘의 밀리세컨드(0~999)"+now.getMilliseconds());
+				console.log("오늘의 경과시간(밀리세컨드 단위), 기준은 1970년 1월 1일"
+							+now.getTime());
+				
+			}
+			/* var today = new Date(); //오늘 날짜
+		 	var preDay = new Date("2010.01.01"); //2010년 1월 1일
+		 	
+		 	var x = today.getTime() - preDay.getTime()
+		 	console.log(x/1000/60/60/24); 
+		 	 */
+		 	
+			/* 문제1)내가 태어난날이 오늘까지 몇일,몇년 지났는지 계산하세요.*/
+			function proc5(){
+				
+				var day = new Date();
+				day = new Date(1994,2,20);
+				day = new Date("1994.2.20");
+				
+				day.getDate();
+				day.getDay();
+				
+				
+				var x = day1.getTime() - day2.getTime();
+				var y = parseInt(x/1000/60/60/24);
+				var z = parseInt(y/365);
+				console.log(y +"일 지났습니다."+ z + "년 지났습니다.");
+				
+				 
+				/*3060일 지났습니다. 30년 지났습니다.*/
+				
+			}
+			/* 문제2) 오늘부터 100일이 지난 날은 언제인지 출력하세요.*/
+			function proc6(){
+				var today=new Date();
+				var _100day=new Date(today.getTime()+(100*24*3600*1000));
+				console.log(_100day);
+				
+			}
+			
+			function proc7(){
+				
+				var selDate = document.getElementById("pdate").value;				
+				var today = new Date();
+				selDate = new Date(selDate);				
+				console.log(selDate);
+				
+				var refundDate = today - 7 * 3600 * 24 * 1000;
+				var ment = "";
+				
+				/*오늘(2019/10/8)기준으로 환불일이 7일이내의 것만 가능하다.
+				구입한 날을 셀렉트하여 환불이 가능한지/아닌지 확인하세요.
+				날짜~ 2019년 10월2일~10월 8일 까지는 "환불이 가능합니다." 
+				이외는 날짜는 "환불이 불가능합니다."
+				오늘 이후의 날짜를 셀렉하면 "다시 선택해주세요"
+				
+				*/
+				if(selDate > today){
+					ment = "다시 선택해주세요";
+				} else if(selDate > refundDate){
+					ment = "환불이 가능합니다.";
+				} else {
+					ment = "환불이 불가능합니다.";
+				}
+				
+				document.getElementById("mention").innerHTML = ment;
+			}
+			
+			
+			window.onload = function(){ 
+				alert((new Date(2019,2,0)).getDate());
+			}
+		
+		
+		</script>
+	</head>
+	<body>
+		<!--  <div id="res"></div>-->
+		<input type="date" id="pdate">
+		<button type="button" onclick="proc7();">환불</button>
+		<p id="mention"></p>
+		
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

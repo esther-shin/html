@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>리스트스타일</title>
+	<style>
+	
+		ul{
+			list-style:none;
+			
+		}
+		ul li a{
+		text-decoration:none;
+		}
+		ul li a:hover{
+			text-decoration : underline;
+		}
+		 ul li{
+		 display:inline;/* 강제로 inline(in line 문자그대로 해석) = span처럼 줄어듬//기본 상태는 block 밑으로 내리는 거*/
+		 padding: 20px;
+		 border: 1px solid red;
+		 letter-spacing: 10px;/* 글자 사이 간격(자간) */
+		 }
+		
+	</style>
+	
+	
+	</head>
+	<body>
+		<ul>
+		<li><a href="#">집</a></li>
+		<li><a href="#">지중해</a></li>
+		<li><a href="#">사막</a></li>
+		<li><a href="#">하와이</a></li>
+		<li><a href="#">친정</a></li>
+		</ul>
+	</body>
+</html>

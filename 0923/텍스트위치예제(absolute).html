@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>텍스트위치예제</title>
+	<style>
+	
+	
+	img{
+		position:absolute;
+		left:0;
+		top:0;
+		z-index:-1;/*z-index 값이 작을 수록 뒤로 간다.  */
+	}
+	
+	
+	p{
+		position: absolute;
+		top:200px;
+		color:red;
+	}
+	
+	</style>
+	</head>
+	<body>
+		<img src="../imgs/dog.png">
+		<p>img요소의 z-index가 -1이므로 다른 요소의 뒤에 위치한다</p>
+	</body>
+</html>

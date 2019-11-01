@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>입력폼유효성검사</title>
+	<script>
+	
+	
+	function reg(){
+		
+	var f = document.ff;
+	
+	
+	idValue = f.id.value;
+	idReg = /^[a-z][a-zA-Z0-9]{7,9}$/;
+	
+	 if(!(idReg.test(idValue))){
+			
+			alert("아이디 오류");
+			f.id.focus();
+			
+			return;
+	 }
+	
+	nameValue = f.name.value; //입력한 값
+	nameReg =/^[가-힣]{2,5}$|^[a-zA-Z]{5,15}$/; 
+	 
+	 if(!(nameReg.test(nameValue))){
+		
+			alert("이름 오류");
+			f.name.focus();
+			
+			return;
+	}
+	 
+	 
+	passValue = f.pass.value;
+	passReg =/^[a-zA-Z0-9]{5,15}$/
+	
+	if(!(passReg.test(passValue))){
+		
+		alert("패스워드 오류");
+		f.pass.focus();
+		
+		return;
+	}
+	
+	
+	passcValue=f.passc.value;
+	passcReg= /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[$@$!%*#?&]).{8,15}$/
+	
+	
+	if(passcValue != passValue){
+		
+		alert("패스워드확인 오류");
+		f.passc.focus();
+		
+		return;
+	}
+	
+	
+	
+	telValue = f.tel.value;
+	telReg =/^[0-9]{3}-[0-9]{3,4}-[0-9]{4}$/
+		if(!(telReg.test(telValue))){
+			alert("전화번호 오류");
+			f.tel.focus();
+			return;
+		}
+	
+	
+	emailValue = f.email.value;
+	emailReg=/^[0-9a-zA-Z_-]+@[0-9a-zA-Z_-]+(\.[0-9a-zA-Z]+){1,2}$/
+	
+		if(!(emailReg.test(emailValue))){
+			alert("이메일 오류");
+			f.email.focus();
+			
+			return;
+		
+		}
+	
+
+	submit();
+	
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	</script>	
+		
+		
+	<style>
+	h1,pre{text-align:center;}
+	
+	body{
+		font-family: 'M PLUS 1p', sans-serif;
+		
+		}
+	#back{
+		background-color:#FFDAD7;
+		width:600px;
+		height:600px;
+		border-radius: 30px;
+		margin:auto;}
+
+	button{border-radius: 25px;
+		background-color:white;
+		
+		}
+		
+	
+	legend{border: 5px solid pink;
+		color:black;
+		background-color:pink;
+		border-radius:10px;
+		text-align:center;}
+	
+	
+
+	fieldset.round{
+		border-radius: 25px;
+		border:5px solid #9F81F7;
+		width: 500px;
+		margin: auto; }
+	
+	input{
+		border-radius: 25px;
+		color:gray;
+		
+		}
+		
+	#button1,#button2 {
+	width:100px;
+	
+	
+	}
+		
+	#aa{
+		margin: auto;
+		padding: 30px;
+		width:300px;}
+		
+		
+	#js1{
+		background-color:white;
+		width:150px;
+		display:inline;
+		margin:auto;
+		float: left;
+		}
+		
+	#js2{
+		background-color:white;
+		width:150px;
+		display:inline;
+		margin:auto;
+		float: left;
+		}
+		
+		td{border-bottom:2px dotted #9F81F7;}
+	</style>	
+	</head>
+	<body>
+		
+	<form name="ff" action="" onsubmit="submit();">
+	<div id="back">
+	<h1>회원정보입력폼</h1>
+	<fieldset class="round" style="border-style:solid;"  >
+	<table>
+	
+		<legend>회원정보입력</legend>
+		
+			<tr>
+			<td>아이디</td>
+			<td><input type="text" name="id" placeholder="Enter id" name ="fm">
+			<button name="button">중복검사</button></td>
+			</tr>
+			
+			<tr>
+			<td>패스워드</td>
+			<td colspan="2"><input type="password" name="pass" placeholder="Enter password"></td>
+			</tr>
+			
+			
+			
+			<tr>
+			<td>패스워드 확인</td>
+			<td colspan="2"><input type="password" name="passc" placeholder="Enter password"></td>
+			</tr>
+			
+			<tr>
+			<td>이름</td>
+			<td colspan="2"><input type="text" name="name" placeholder="Enter name"></td>
+			</tr>
+			
+			<tr>
+			<td>성별</td>
+			<td colspan="2"><p><input type ="radio" name="gender" placeholder="여성" >여성&nbsp;&nbsp;<input type ="radio" name="gender" value="남성"> 남성</p>
+			</tr>
+			
+			<tr>
+			<td>휴대폰 번호</td>
+			<td colspan="2"><input type="text" name="tel" placeholder="010-1234-5678"></td>
+			</tr>
+			
+			<tr>
+			<td>이메일</td>
+			<td colspan="2"><input type="email" name="email" placeholder="abcd123@email.com"></td>
+			</tr>
+			
+			
+			
+			
+		
+	</table>
+	</fieldset>
+		
+		
+		<div id="aa">
+		
+		<input id="js1" type="submit" value="전송" id="button1" onclick="reg();" >
+		<input id="js2" type="button" value="취소" onclick="javascript:history.go(0);" id="button2">
+		</div>
+		
+		</div>
+		</form>	
+
+		
+		<h1>정규식</h1>
+		<pre>
+		1. 입력값(문자열).match(패턴문자/정규식)=>
+		입력값에서 패턴 정규식에 맞는 값이 있느냐?
+		
+		있으면 문자열(여러개일경우 문자열 배열)을 리턴하고 없으면 null을 리턴한다.
+		
+		2.정규식패턴문자.test(입력문자열)==>
+		입력값에서 패턴 정규식에 맞는 값이 있느냐?
+		
+		입력 문자열이 정규식에 맞으면 true, 맞지 않으면 false를 리턴한다.
+		
+		3.정규식 패턴문자.exec(입력문자열)==>
+		입력값에서 패턴 정규식에 맞는 값이 있느냐?
+		있으면 문자열(여러개일 경우 문자열 배열)을 리턴하고 없으면 null을 리턴한다.
+		
+		
+		
+		</pre>
+	
+	
+	<script>
+	
+	function submit(){
+		alert("The member form was submitted");
+	}
+	
+	</script>
+	</body>
+</html>

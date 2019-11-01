@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+	
+	table{
+		border-collapse: collapse;}
+	
+	td,th{border:1px solid;}
+	
+	</style>
+	
+	<script>
+	
+	function re(){
+		var a= document.getElementById("x").value;
+		var b= a*2000000;
+	document.getElementById("result1").value= b;
+	
+	
+ 	var c= document.getElementById("y").value;
+ 	console.log(c);
+	 var d= c*50000;
+ 	document.getElementById("result2").value= d;
+
+	
+	var e= document.getElementById("z").value;
+		var f= e*1000;
+	document.getElementById("result3").value= f;
+	
+	
+	var g= document.getElementById("q").value;
+		var h= g*1000;
+	document.getElementById("result4").value= h;
+		
+	}
+	
+	</script>
+	</head>
+	
+	<body>
+	<h3>Shopping Cart</h3>
+	<table>
+	
+	<tr>
+	<th>품목</th>
+	<th>가격</th>
+	<th>수량</th>
+	<th>합계</th>
+	</tr>
+	
+	<tr>
+	<td>컴퓨터 세트</td>
+	<td>2,000,000원</td>
+	<td><input type="text" id="x" placeholder="0"></td>
+	<td><input type="text" id="result1" placeholder="0"></td>
+	</tr>
+
+
+	<tr>
+	<td>티셔츠</td>
+	<td>50,000원</td>
+	<td><input type="text" id="y" placeholder="0"></td>
+	<td><input type="text" id="result2" value="0"></td>
+	</tr>
+
+
+	<tr>
+	<td>음악파일</td>
+	<td>1,000원</td>
+	<td><input type="text" id="z" placeholder="0"></td>
+	<td><input type="text" id="result3" placeholder="0"></td>
+	</tr>
+
+
+	<tr>
+	<td>영화 파일</td>
+	<td>1,000원</td>
+	<td><input type="text" id="q" placeholder="0"></td>
+	<td><input type="text" id="result4" placeholder="0"></td>
+	</tr>
+	
+	</table>
+	
+	
+	
+	
+	<input id="js1" type="submit" value="계산" id="button1" onclick="re();" >
+	<input id="js1" type="submit" value="구매" id="button2" onclick="" >
+	<input id="js2" type="button" value="초기화"  id="button2" onclick="javascript:history.go(0);">
+	
+	<br><br>
+	<a href="" onclick="func();">back to home</a>
+	
+	<script>
+	
+	function func(){
+	//parent.documnet.location.reload();
+	window.parent.location.href="main.html";
+	}
+	</script>
+	
+	
+	
+	</body>
+</html>

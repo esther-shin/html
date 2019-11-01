@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>반복문</title>
+		<!-- for,while,do-while for-each -->
+		<style>
+			table,tr,td{
+				border
+				:1px solid black;
+			}
+		</style>
+		
+		<script>
+			//i++ 
+			/*  for(var i=0; i<10 ;i += 2){
+				document.write(i+"<br>");
+				
+			}
+			var i=0;
+			while(i<10){
+				document.write(i+"<br>");
+				i ++;
+			}*/
+			
+			var x=1;i=1;
+			/* 
+			document.write("<table>");
+			
+			for(var i=1;i<=25;i++) {
+			
+			if(i%5 ==1) {
+			document.write("<tr>");
+			}
+				
+			document.write("<td>");
+			document.write(i);
+			document.write("</td>");
+			
+			if(i%5 == 0) {
+			document.write("</tr>");
+			
+			}
+			
+			document.write("</table>");
+			
+			
+			 */
+			 
+			 
+			 
+			 /* 1에서 5까지만 계속 돌아.
+			 document.write("<table>");
+			 
+			 for(i; i<=5;i++){
+				 
+				 document.write("<tr>");
+				 
+				 for(x; x <= 5*i;x++){
+					document.write("<td>");
+					document.write(x);
+					document.write("</td>");
+				 
+				 }
+				 document.write("</tr>");
+				 
+			 }
+			 
+			 document.write("</table>");
+			 */
+			 
+			 
+			 
+			 
+			 /* for문 2개 
+			 
+			 var n= 1;
+			 document.write("<table>");
+			 
+			 for(var i = 0; i<5 ;i++){
+				 document.write("<tr>");
+				
+				 for(var j =0; j<5 ; j++){
+					 document.write("<td>");
+					 document.write(n++);
+					 document.write("</td>");
+					 
+				 }
+				 
+				 document.write("</tr>");
+			 }
+			 	document.write("</table>")
+			*/
+			
+			
+			
+			
+			/* for 1개 사용 
+			document.write("<table>");
+			for(var i = 1 ;i<=25;i++){
+				if(i%5 ==1){
+				document.write("<tr>");
+				}
+				
+				document.write("<td>"+i+"</td>");
+				
+				if(i%5 ==0){
+				document.write("</tr>");
+				}
+			}
+			document.write("</table>");*/
+			
+			var i =1; 
+			document.write("<table>");
+				
+			while(i <= 25){
+				
+				if(i%5 == 1){
+					document.write("<tr>");
+					}
+				
+				document.write("<td>");
+				document.write(i);
+				document.write("</td>");
+				
+				if(i%5 == 0){
+					document.write("</tr>");
+					}	
+			
+				i++;
+			}
+				
+				
+				
+			document.write("</table>");
+			
+		</script>
+	</head>
+	
+	<body>
+	
+	</body>
+</html>

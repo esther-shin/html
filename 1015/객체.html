@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>객체</title>
+	<script>
+	//person객체 생성
+ 	/*
+	var person = {
+			firstName : "John",
+			lastName : "Doe",
+			age: 20,
+			money:1000000,
+			walk:function(){
+				return 10;
+			}
+	};
+	
+
+		window.onload=function(){
+			document.getElementById("result").innerHTML = person.firstName+","
+			+person.lastName+","+person.age+","+person.money+","+person.walk();
+		}
+ */
+/* 	
+	function Car(model,speed,color){
+		this.model = model;
+		this.speed = speed;
+		this.color = color;
+		this.brake = function(){
+			this.speed -= 10;
+			
+		}
+		this.accel = function(){
+			this.speed +=10;
+		}
+	}
+	
+	
+	var myCar = new Car("520d",60,"red");
+	document.write("모델:" +myCar.model+"<br>")
+	document.write("속도:" +myCar.speed+"<br>")
+	document.write("색상:" +myCar.color+"<br>")
+	myCar.brake();
+	document.write("속도:" +myCar.speed+"<br>")
+	myCar.brake();
+	document.write("속도:" +myCar.speed+"<br>")
+	myCar.accel();
+	document.write("속도:" +myCar.speed+"<br>")
+	
+	*/
+	
+	function person(firstName,lastName,age,money){
+		this.firstName=firstName;
+		this.lastName= lastName;
+		this.age= age;
+		this.money = money;
+		
+		this.gettingold= function(){
+			this.age +=1;
+		}
+		this.earningMoney= function(){
+			this.money +=1;
+		} 
+		//하나씩 속성으로 세팅하기
+	 } 
+
+	var hombre = new person("Eugene","shin",28,9999999);
+		document.write("firstName:"+ hombre.firstName+"<br>");
+		document.write("age:"+ hombre.age+"<br>");
+		document.write("money:"+ hombre.money+"<br>");
+		hombre.gettingold();
+		hombre.gettingold();
+		document.write("age:"+ hombre.age+"<br>");
+		hombre.earningMoney();
+		document.write("money:"+ hombre.money+"<br>");
+		hombre.earningMoney();
+		document.write("money:"+ hombre.money+"<br>");
+		hombre.earningMoney();
+		document.write("money:"+ hombre.money+"<br>");
+		hombre.earningMoney();
+		document.write("money:"+ hombre.money+"<br>");
+		hombre.earningMoney();
+		document.write("money:"+ hombre.money+"<br>");
+		document.write("<hr>");
+	
+	//person객체 생성하기
+	//person객체 생성해서 호출하기
+	
+	
+	/*객체를 하나 생성해서
+	맛집리스트를 찾아갈 것입니다.
+	인수는 1)맛집이름, 2)위치, 3)전화번호, 
+	4)지금있는 곳(0km)에서 부터 그곳까지의 거리(함수=메서드)*/
+	
+	function gtg(name, location, tel,distance){
+		this.name=name;
+		this.location=location;
+		this.tel=tel;
+		this.distance=function(){
+			return distance;
+		}
+	}
+	
+	var yummy = new gtg("buenapasta", 50, 123456,10);
+	document.write("name:"+yummy.name + "<br>");
+	document.write("location:"+yummy.location + "<br>");
+	document.write("tel:"+yummy.tel + "<br>");
+	document.write("distance:"+yummy.distance()+"<br>")
+	
+	
+	</script>
+	</head>
+<body>
+	<p id="result"></p>
+</body>
+</html>

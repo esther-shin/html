@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>rockscissorpaper</title>
+	<script>
+	
+		
+		function rsp(){
+			
+		var imgarr1=["가위_좌","바위_좌","보_좌"];
+		var imgarr2=["가위_우","바위_우","보_우"];
+		
+		user = prompt('가위(0) 바위(1) 보(2) 중 하나를 입력합니다.')
+		console.log("user:" + user);
+
+		comp = Math.floor(Math.random()*3)
+		console.log("comp:"+ comp);
+		
+		document.getElementById("img1").firstChild.src = "../imgs/"+imgarr1[user]+".png";
+		document.getElementById("img2").firstChild.src = "../imgs/"+imgarr2[comp]+".png";
+			
+		if(comp ==0 && user==0||comp ==1 && user==1||comp ==2 && user==3){
+			ment="비겼습니다.";
+		}else if( user == 0 &&  comp == 2 || user == 1 && comp ==0 || user == 2 && comp == 1){
+			ment="유저가 이겼습니다.";
+		}else if(user == 0 &&  comp == 1|| user == 1 && comp ==2 || user == 2 && comp == 0){
+			ment="컴퓨터가 이겼습니다.";
+		}
+		
+			document.getElementById("mention").innerHTML= ment;
+			
+		}
+	
+		
+		
+	
+	</script>
+	
+	<style>
+	#all{display:inline;}
+	#img1{float:left;width:50%;text-align:center;}
+	#img2{float:left;width:50%;text-align:center;}
+	#fir{float:left;background-color:#f5d507;width:50%;text-align:center;height:25px;}
+	#sec{float:left;background-color:#a2f507;width:50%;text-align:center;height:25px;}
+	button{
+	clear:both;}
+	</style>	
+	
+	</head>
+	<body onload="change();">
+	<div id="all">
+	<div id="fir" ><b>컴퓨터</b></div>
+	<div id= "sec" ><b>유저</b></div>
+	</div>
+	
+	<div id="img1"><img src="../imgs/가위_좌.png" width= 300;></div>
+	<div id="img2"><img src="../imgs/가위_우.png" width= 300;	></div>
+	
+	
+	<button onclick="rsp();">입력</button>
+	<p id="mention"></p>
+	
+	</body>
+</html>

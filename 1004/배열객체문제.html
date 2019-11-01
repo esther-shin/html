@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>배열객체문제</title>
+		<script>
+		/* prompt로 사람 이름 5명을 받아서 배열에 넣고
+		prompt로 숫자를 2개를 받아서 
+		그 범위 만큼의 배열을 출력하세요.
+		함수명 function solution(){return 출력 부분;}
+		document.write(solution(0,2));
+		*/
+		 var arr = new Array();
+		 
+		function abc(){
+			
+		 arr[0]= prompt("첫번째 사람이름을 입력하세요");
+		 arr[1]= prompt("두번째 사람이름을 입력하세요");
+		 arr[2]= prompt("세번째 사람이름을 입력하세요");
+		 arr[3]= prompt("네번째 사람이름을 입력하세요");
+		 arr[4]= prompt("다섯번째 사람이름을 입력하세요");
+		 
+		 return arr;
+		 }
+		 document.write(abc());
+		 
+		  function solution(){
+			
+			 a= prompt("첫번째 숫자를 입력하세요");
+			 b= prompt("두번째 숫자를 입력하세요");
+			 
+			 
+			 return arr.slice(a,b);
+		 }
+		 
+		 document.write(solution()); 
+		 
+		 
+		 /* 문제 2 prompt로 이름을 받을떄. 자신의 이름을 넣고 
+		 자신의 이름이 들어간 index 번호를 출력하세요*/
+		 
+		
+		  function solution2(){
+			 alert(arr);
+			 var vname =prompt("이름을 넣어주세요");
+				alert(arr.indexOf(vname));
+			 return  arr.indexOf(vname);
+			
+		 }
+		 
+		 document.write(solution2());  
+		 
+		 
+		</script>
+		
+	</head>
+	<body>
+
+</body>
+</html>

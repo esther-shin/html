@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>배열</title>
+	<script>
+		 var fruits =["apple","banana","orange"];
+		 var fruits= new Array();
+		 fruits[0]="apple"
+		 fruits[1]="banana"
+		 fruits[2]="orange"
+		 //자바스크립트는 배열 크기 안써줘도 됨.
+		 
+		 
+		 
+		/*  document.write(fruits[0]+"<br>");
+		 document.write(fruits[1]+"<br>");
+		 document.write(fruits[2]+"<br>");
+		  */
+		  
+		  //alert(fruits.length);
+		  
+		/*  for(var i= 0;i<fruits.length;i++ ){
+			 document.write(fruits[i]+"<br>");
+		 } */
+		 
+		 for(x in fruits){
+			 document.write(fruits[x]+"<br>");
+		 }
+		 
+		 /* 1)prompt를 이용해서 배열에 숫자 5개를 입력하고 
+		 그 숫자를 다시 출력하세요. 
+		 
+		 프롬프트에 숫자를 받아서 그 숫자만큼 배열을 입력하고 숫자를
+		 다시 출력하세요.
+		 */
+		
+		 var numbers= new Array();
+		/* //공간이 없어서 밑에 for문에 숫자를 써야됨.
+		 for(i=0; i<5;i++){
+			 
+			 numbers[i] = prompt("숫자를 입력하세요 ");
+		 }
+		
+		 document.write(numbers+"<br>");//
+		 numbers[i]라고 안해도 구성요소가 다찍힘
+		  */
+		 
+		 
+		
+			 
+		 var length = prompt("배열수를 입력하세요 ");
+		 
+		 for(i=0; i<length;i++){
+		 numbers[i] = prompt(i+"번째 숫자를 입력하세요 ");
+		 }
+		 
+		 document.write(numbers+"<br>");
+		 
+		 
+		 
+		 
+		/*  
+		 //3번 문제) 3/6/2/100/A/3.2/banana
+		 
+		 
+		 document.write("<table>");
+		 while(i<)
+		 document.write("<td>");
+		 document.write(3);
+		 document.write("</td>");
+		 
+		 document.write("</table>");
+
+		  */
+		 
+		
+	</script>
+	
+	</head>
+	<body>
+	
+	</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>빙고게임</title>
+	<style>
+			table,tr,td{
+				border
+				:1px solid black;
+			}
+		</style>
+	
+	<script>
+	//배열 25개 생성
+	//출력 형태를 5*5로 출력하세요
+	
+	
+	
+	function number(){
+	
+			var result =Math.floor(Math.random()*25)+1;
+			document.write(result);
+	
+			var arr= new Array();
+			
+			for(var i = 0; i<25;i++){
+				arr[i]=Math.floor(Math.random()*25)+1;
+				for(var j=0;j<i;j++){
+					if(arr[i] == arr[j]){
+						i--;
+					}	
+				}
+			}
+			return arr;
+			}
+				document.write(number());
+			
+				
+			function changeBlack(id){
+				var element= document.getElementById(id);//객체를 바로 받아서 하
+				element.style.backgroundColor ="gray";//검정으로 바꾸고
+				a=totalBingoCount();	
+			
+			}
+			
+			
+			var result =0;
+			
+			
+			document.write("<table>");
+				
+			for(var i = 1; i<=25;i++){
+				result=Math.floor(Math.random()*25)+1;
+				
+				if(i%5 ==1){
+					document.write("<tr>");
+				}
+				document.write("<td id ="+ i + " onclick= 'changeBlack(this.id)' >"+result+ "</td>");
+				
+				if(i%5 == 0){
+					document.write("</tr>");
+				}	
+				
+			}
+				
+			document.write("</table>");
+			
+			
+			
+			var bingoArr= new Array();
+			var bingCnt=0;
+				
+				
+			function colored(){
+				
+			bingo=new Array([1,2,3,4,5],
+				  [6,7,8,9,10],
+				  [11,12,13,14,15],
+				  [16,17,18,19,20],
+				  [21,22,23,24,25] )
+			
+				for(var i=0;i<bingoArr.length;i++){
+					cnt=0;
+					for(var j=0;j<bingoArr[i].arr;j++){
+						if(document.getElementById(bingoArr[i][j]).style.backgroundColor=="gray"){
+							cnt++;
+							if(cnt==5){
+								bingCnt++;
+							}
+						}
+					}
+					
+				}
+			
+				return bingCnt;
+			}			
+			document.write(bingCnt);
+			
+			
+			  
+		
+	</script>
+	
+	
+	</head>
+	
+	<body>
+		<p id="result"></p>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>location객체</title>
+		<script>
+		var res ="";
+		
+		res += "protocol :"+location.protocol+"<br>";
+		res += "host :" + location.host+ "<br>";//www.naver.com
+		res += "hostName :" + location.hostname+ "<br>";//www.naver.com
+		res += "port :" + location.port+ "<br>";//https:
+		res += "pathname :" + location.pathname+ "<br>";///jsref/tryit.asp
+		res += "href :" + location.href+ "<br>";//주소 전체
+		
+		window.onload = function(){
+			document.getElementById("result").innerHTML= res;
+		}
+		</script>
+	</head>
+	<body>
+	<div id="result"></div>
+	</body>
+</html>

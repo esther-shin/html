@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>date객체</title>
+	
+	
+	
+	<script>
+		window.onload = function(){
+			
+			//p태그까지 다 읽고 나서 돌아옴. 
+		 	
+			document.getElementById("x").innerHTML="xxxxx";
+		 
+		
+			//date()객체//모두다 천분의 일초 기준으로 값이 나옴.
+			var now1 = new Date(); //오늘 날짜
+			var now2 = new Date(10000000000);//1970년 1월1일부터 천분의 1초
+			var now3 = new Date("2000.1.2");
+			var now4 = new Date(2000,1,1,1,20,30);//월(달 수)을 0에서 부터 시작함.
+			var now5 = now1.toLocaleString();
+			var now6 = now2.toLocaleString();
+			var now7 = now3.toLocaleString();
+			var now8 = now4.toLocaleString();
+			
+			//1분에 60초 60분*24시간*1000(천분의 1기준이여서 1000을 곱해주는 거)
+			var now9 = new Date(2010,0,01);	
+			var now10 = new Date(2019,9,07);	
+			var now11 = parseInt(now10-now9)/(60*60*24*1000);
+			
+			document.getElementById("result").innerHTML = now1+"<br>";
+			document.getElementById("result").innerHTML += now2+"<br>";
+			document.getElementById("result").innerHTML += now3+"<br>";
+			document.getElementById("result").innerHTML += now4+"<br>";
+			document.getElementById("result").innerHTML += now5+"<br>";
+			document.getElementById("result").innerHTML += now6+"<br>";
+			document.getElementById("result").innerHTML += now7+"<br>";
+			document.getElementById("result").innerHTML += now8+"<br>";
+			document.getElementById("result").innerHTML += now11+"<br>";
+			
+		}
+		
+		/* 2010년 1월 1일 부터 오늘까지의 날짜 수를 계산하는 프로그램을 작성하세요.
+		소수점은 parseInt()를 이용해서 버린다.*/
+		
+		
+		
+		
+		
+		
+	</script>
+	</head>
+	<body>
+	<div id= "result"></div>
+	
+	
+	
+ 	<p id="x"></p>
+	<!-- <script>
+		<!--onload쓰기 싫을때 바디에 스크립트 써주고 
+		getElementById("x").innerHTML로 써줌
+		</script> 
+	 -->
+	</body>
+</html>

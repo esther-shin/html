@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>배열 및 함수 문제</title>
+	<script>
+	
+	/* 
+	
+	문제1) 두 정수 a,b가 주어졌을때
+	a 와 b사이에 속한 모든 정수의 합을 리턴하는 함수( solution)을 작성하세요.
+	예를들어, a=3, b=7이면 3+4+5+6+7=25합을 리턴하여 출력하세요.
+	두 수가 같은 경우에는 0을 리턴해주세요.
+	(b가 a의 수 보다 더 클 경우도 a=7, b=3 7+6+5+4+3 = 합계)
+	*/
+	
+	
+	/* 
+	function solution(a, b){
+		var sum=0;
+		if (a>b){
+			for(var i= b ;i<= a;i++){
+				sum += i;
+				}
+		}	
+		if(a<b){
+					for(var i =a; i <= b;i++){
+						sum += i;
+					}
+		}
+		
+		else if(a == b){
+				sum=0;
+		}
+		
+		return sum;
+	
+		}
+	
+		var sum = solution(2,7);
+		document.write(sum);
+	 */
+	 
+		/* 
+		문제 2) 길이가 n이고,"수박수박수박수박..."와 같은 패턴을 유지하는 문자열을
+		리턴하는 함수 solution을 완성하세요.
+		예를들어 n 값이 4면 수박수박 3이면 수박수를 리턴하세요.
+		//홀수:  i%2 == 1,짝수:i%2 == 0
+		
+		*/
+		
+			function solution(n){
+				var sum="";
+				for(var i=1; i<=n ; i++){
+					if( i%2 == 1){
+						sum += "수";
+					
+						}else if(i%2 == 0){
+							sum += "박";
+				}
+					
+			}
+				return sum;
+		}
+		 var sum =solution(0);
+		 document.write(sum);
+		
+		
+	
+	
+	</script>
+	</head>
+	
+	<body>
+	
+	</body>
+</html>

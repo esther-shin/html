@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>객체연습1</title>
+	<script>
+	function proc1(){
+		var rect ={//객체 생성
+				width : 5,
+				height : 7,
+				getArea : function() {//rir 
+					 area = this.width*this.height;
+					 return area;
+				} //멤버 변수를 나타낼때 자바 스크립트에서는 꼭 this 를 써야됨
+		}//스크립트는 타입이 없어서 리턴해도되고 안해도됨.
+		
+		//함수호출
+		a= rect.getArea()
+		
+		//객체 속에 선언되지 않은 속성이나 함수도 
+		//객체를 수정하지 않고 직접 동적으로 추가해서 사용 할 수 있다.
+		rect.name="네모네모";
+		
+		
+		document.getElementById('result1').innerHTML =
+			"이름=" + rect.name+"<br>";
+			
+		document.getElementById('result1').innerHTML +=
+			"가로=" + rect.width + "<br>";
+			
+		document.getElementById('result1').innerHTML +=
+			"세로=" + rect.height + "<br>";
+		
+		document.getElementById('result1').innerHTML +=
+			"면적=" + a ;
+		
+		
+		/*---------------------------------- 
+		//출력변수
+		res = "이름 =" + rect.name + "<br>";
+		res +="가로 = "+ rect.width + "<br>";
+		res += "세로 ="+rect.height + "<br>";
+		res += "면적 =" +a;
+		
+		
+		//출력 document.write를 쓰면 안됨 덮어써서 사라짐. 밑이 이미 사용 되서 없어짐/
+		document.getElementById('result1').innerHTML =res; 
+		---------------------------------------*/
+		
+	}
+	
+	function proc2(){
+		
+		rr=window.prompt("반지름을 입력")
+		
+		var circle ={//객체 생성
+				rad : rr,
+				name : "동그라미",
+				getArea : function() {
+					 area = this.rad*this.rad*3.14;
+					 return area;
+				} 
+		
+		
+		}
+		//함수 호출
+		a= circle.getArea()
+		//동적으로 추가되는 함수
+		
+		circle.getCircum = function(){
+			return 2*3.14*this.rad;
+		} 
+		
+		name : "가나다",
+		res = "이름 =" + circle.name + "<br>";
+		res += "반지름 =" + circle.rad+ "<br>";
+		res += "넓이 =" + circle.getArea() + "<br>";
+		res += "둘레= " + circle.getCircum();
+		//출력
+		document.getElementById('result2').innerHTML =res;
+		//<br>이 html 코드여서 res가 html문장이여서 출력하라는 거.
+	}
+	
+	</script>
+	
+	
+	<style>
+	.box{
+	
+	width:90%;
+	height: auto;
+	margin: 5px;
+	padding: 10px;
+	background: lightblue;
+	border: 1px solid blue;
+	
+	}
+	.result{
+	
+	width:90%;
+	height: auto;
+	margin: 5px;
+	padding: 10px;
+	border: 1px dotted red;
+	
+	}
+	
+	</style>
+	
+	</head>
+	<body>
+	<div class="box">
+	<h2>객체 연습1</h2>
+	- Rect 객체 생성- <br>
+	-리터럴에 의한 객체 생성<br>
+	-속성 : width,height <br>
+	-기능 : 면적구하기<br><br>
+	
+	
+	<button type ="button" onclick="proc1()">실행</button>
+	<br><br>
+	<div class ="result" id= "result1"></div>
+	<!-- class 같은 거 는 여러번 적용 가능 -->
+	
+	</div>
+	
+	
+	
+	<div class="box">
+	<h2>객체 연습2</h2>
+	- Circle 객체 생성- <br>
+	-리터럴에 의한 객체 생성<br>
+	-속성 : name, rad(반지름) <br>
+	-기능 : 면적구하기
+	-반지름을 입력받는다
+	<br><br>
+	
+	
+	<button type ="button" onclick="proc2()">실행</button>
+	<br><br>
+	<div class ="result" id="result2"></div>
+	<!--id는 출력하기 위해서,class는 스타일 때문에  -->
+	
+	</div>
+	
+	</body>
+</html>
